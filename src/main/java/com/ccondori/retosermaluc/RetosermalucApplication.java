@@ -10,4 +10,5 @@ public class RetosermalucApplication {
 		SpringApplication.run(RetosermalucApplication.class, args);
 	}
 
+
 }

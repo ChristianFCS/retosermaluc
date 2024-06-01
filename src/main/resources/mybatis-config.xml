@@ -11,6 +11,7 @@
     </settings>
     <mappers>
         <mapper resource="mappers/processdata/ProcessDataMapper.xml"/>
+        <mapper resource="mappers/auth/AuthMapper.xml"/>
 
 
     </mappers>
