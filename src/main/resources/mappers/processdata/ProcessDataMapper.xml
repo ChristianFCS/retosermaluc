@@ -13,4 +13,9 @@
         exec SLUC_ProcesarData
     </select>
 
+    <select id="generarExcel" resultType="map">
+        exec SLUC_ListarFormulasProcesadas
+    </select>
+
+
 </mapper>
