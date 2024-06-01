@@ -64,4 +64,11 @@ public class ProcessDataServiceImpl implements ProcessDataService {
         else throw new BusinessException("No se ha grabado ningun dato.");
 
     }
+
+    @Override
+    public String procesarFormulas() {
+        Integer cantRegistros = processDataMapper.procesarFormulas();
+        if(cantRegistros>0) return ("Se procesaron "+cantRegistros+" registros.");
+        else throw new BusinessException("No se procesó ningún dato.");
+    }
 }

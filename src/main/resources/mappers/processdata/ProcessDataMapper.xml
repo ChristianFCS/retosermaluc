@@ -9,4 +9,8 @@
         #{formulas,typeHandler=com.ccondori.retosermaluc.commons.config.TypeFormula}
     </select>
 
+    <select id="procesarFormulas" resultType="Integer">
+        exec SLUC_ProcesarData
+    </select>
+
 </mapper>

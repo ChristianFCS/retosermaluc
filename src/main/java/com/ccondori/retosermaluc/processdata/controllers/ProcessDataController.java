@@ -26,4 +26,10 @@ public class ProcessDataController {
 
         return ResponseApi.build(processDataService.cargarDatosExcel(file));
     }
+
+    @PostMapping(PROCESAR_FORMULAS)
+    public ResponseApi<String> procesarFormulas() {
+
+        return ResponseApi.build(processDataService.procesarFormulas());
+    }
 }
