@@ -10,4 +10,5 @@ import java.util.List;
 @Mapper
 public interface ProcessDataMapper {
     Integer cargarDatosExcel(@Param("variables") List<Variable> variables,@Param("formulas") List<Formula> formulas);
+    Integer procesarFormulas();
 }

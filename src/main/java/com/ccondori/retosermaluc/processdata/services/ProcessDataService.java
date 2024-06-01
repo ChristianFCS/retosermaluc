@@ -6,4 +6,5 @@ import java.io.IOException;
 
 public interface ProcessDataService {
     String cargarDatosExcel(MultipartFile file) throws IOException;
+    String procesarFormulas();
 }
