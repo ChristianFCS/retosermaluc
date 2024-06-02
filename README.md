@@ -96,6 +96,9 @@ En el archivo `pom.xml`, puedes encontrar varias configuraciones útiles:
 ## Credenciales de prueba para el login
 - username: usuario_admin
 - password: 123456
+- 
+## Consideración adicional
+Recordar que para descargar datos del excel, primero se debe haber cargado el documento y posteriormente llamado al servicio de Procesar Data.
 
 ## Contacto
 
