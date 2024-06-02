@@ -93,6 +93,10 @@ En el archivo `pom.xml`, puedes encontrar varias configuraciones útiles:
 - `mvn clean install`: Construye la aplicación.
 - `mvn test`: Ejecuta los tests.
 
+## Credenciales de prueba para el login
+- username: usuario_admin
+- password: 123456
+
 ## Contacto
 
 Si tienes alguna pregunta o sugerencia, no dudes en abrir un issue o contactarme a través de mi correo electrónico [ccondoris1@gmail.com](mailto:ccondoris1@gmail.com).
