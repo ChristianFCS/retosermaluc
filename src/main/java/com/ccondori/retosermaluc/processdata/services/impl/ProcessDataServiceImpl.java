@@ -4,8 +4,10 @@ import com.ccondori.retosermaluc.commons.exceptions.BusinessException;
 import com.ccondori.retosermaluc.commons.models.Formula;
 import com.ccondori.retosermaluc.commons.models.Variable;
 import com.ccondori.retosermaluc.processdata.mappers.ProcessDataMapper;
+import com.ccondori.retosermaluc.processdata.reports.ProcessDataReport;
 import com.ccondori.retosermaluc.processdata.services.ProcessDataService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.apache.poi.ss.usermodel.Row;
@@ -14,8 +16,10 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -70,5 +74,25 @@ public class ProcessDataServiceImpl implements ProcessDataService {
         Integer cantRegistros = processDataMapper.procesarFormulas();
         if(cantRegistros>0) return ("Se procesaron "+cantRegistros+" registros.");
         else throw new BusinessException("No se procesó ningún dato.");
+    }
+
+    @Override
+    public Resource generarExcel() {
+        String[] cabecera={
+                "aco_id_asociacion_comuna"
+                ,"emp_nom_empresa"
+                ,"com_nom_comuna"
+                ,"sub_nombre_sec"
+                ,"opc_tarifaria_id"
+                ,"opc_tarifaria_nombre"
+                ,"aca_for_formula_descompuesta"
+                ,"car_desc_cargo"
+                ,"resultado"
+                ,"resultado_msg"
+                ,"process_date"
+        };
+        List<HashMap<String, Object>> cuerpo = processDataMapper.generarExcel();
+
+        return (new ProcessDataReport(cuerpo,cabecera)).generarReporte();
     }
 }
