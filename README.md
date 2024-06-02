@@ -31,6 +31,24 @@ git clone https://github.com/ChristianFCS/retosermaluc.git
 cd retosermaluc
 ```
 
+### 2. Levantar objetos de Base de datos
+
+Crear una base de datos y ejecutar el siguiente script para la creación de los objetos necesarios:
+`CREATE-OBJECTS.sql`
+Cambiar el nombre de la base de datos a donde apuntará en al primera línea de dicho Script.
+```bash
+USE nombre_mi_base_de_datos;
+GO
+...
+...
+...
+```
+
+```bash
+git clone https://github.com/ChristianFCS/retosermaluc.git
+cd retosermaluc
+```
+
 ### 2. Configurar el Entorno
 
 Configura las variables de configuración si es necesario. Puedes crear un archivo `application.properties` o `application.yml` en el directorio `src/main/resources` y agregar tus variables de configuración allí. 
